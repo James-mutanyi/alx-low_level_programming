@@ -457,4 +457,5 @@ void swap_int(int *a, int *b);
  * Return: returns length
  */
 int _strlen(char *s);
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 #endif
