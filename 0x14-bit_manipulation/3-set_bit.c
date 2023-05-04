@@ -1,16 +1,21 @@
 #include "main.h"
-#include "2-get_bit.c"
+
 /**
- * set_bit - to set the bit
- * @n: grabs the integer 
+ * get_bit - returns the integer bit
+ * @n: number to search
+ * @index: index of the bit
  *
+ * Return: value of the bit
  */
-int set_bit(unsigned long int *n, unsigned int index)
+int get_bit(unsigned long int n, unsigned int index)
 {
-	if (index > 32)
+	int bit_val;
+
+	if (index > 63)
 		return (-1);
-	(*n) |= 1 << index;
-	if (get_bit((*n), index) == 1)
-		return (1);
-	return (-1);
+
+	bit_val = (n >> index) & 1;
+
+	return (bit_val);
 }
+
